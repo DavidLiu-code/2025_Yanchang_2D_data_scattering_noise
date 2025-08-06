@@ -54,6 +54,55 @@ Reconstructs shot gathers from offset-based sorting.
 ## 🧪 Dataset
 
 * **09YCEW180-SCAMP1-gdm1700m-5s2ms.sgy**: A sample seismic dataset containing SEG-Y data simulating scattering interference in the near surface.
+### 09YCEW180 Seismic Dataset Overview
+
+This dataset contains pre-processed seismic data acquired along 2D seismic lines from the 09YCEW180 survey. The files are organized into various gather types such as CMP, Shot, and Offset gathers.
+
+---
+
+#### 📌 Key Trace Header Byte Locations (SEG-Y Format)
+
+| Field         | Byte Range | Description         |
+|---------------|-------------|---------------------|
+| FFID (Shot)   | 9–12        | Shot number (FFID)  |
+| Channel No.   | 13–16       | Receiver channel number |
+| CMP No.       | 21–24       | Common Midpoint (CMP) number |
+| Source X      | 73–76       | Source X coordinate |
+| Source Y      | 77–80       | Source Y coordinate |
+| Receiver X    | 81–84       | Receiver X coordinate |
+| Receiver Y    | 85–88       | Receiver Y coordinate |
+| CMP X         | 181–184     | CMP X coordinate |
+| CMP Y         | 185–188     | CMP Y coordinate |
+
+---
+
+#### 📊 Data Overview
+
+- **Acquisition Type**: 2D seismic lines (not extracted from a 3D volume)
+- **Receiver Layout**: Two receiver lines per shot
+
+---
+
+#### 🛠️ Processing Status
+
+- ✅ **Statics Correction**: Performed  
+- ✅ **Amplitude Compensation**: Performed  
+- ❌ **Dynamic Correction (NMO/DMO)**: Not performed
+
+---
+
+## 📁 Directory Structure
+
+Each output gather is stored in its own directory:
+
+- `09YCEW180-cmp-gather/` – CMP gathers
+- `09YCEW180-offset-gather/` – Offset gathers
+- `09YCEW180-shot-gather/` – Shot gathers
+
+A `.placeholder` file is created in each folder to maintain structure in version-controlled environments.
+
+---
+
 
 ---
 
